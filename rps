@@ -1,0 +1,44 @@
+/**
+ * Rock Paper Scissors
+ */
+import kotlin.random.Random
+
+
+fun main(args: Array<String>) {
+    if (args.first() == "") {
+        println("Мы играем?")
+        return
+    }
+    val randomValues = { Random.nextInt(3) }
+    val machine = randomValues()
+    val item = args.first().first().lowercaseChar()
+    val human = when (item) {
+        'к' -> 0
+        'н' -> 1
+        'б' -> 2
+        'r' -> 0
+        's' -> 1
+        'p' -> 2
+        else -> 3
+        }
+    if (human == 3) {
+        println("Мы же в \"Камень, ножницы, бумага.\" играем?!")
+        return
+    }
+    when (machine) {
+        0 -> println("Камень")
+        1 -> println("Ножницы")
+        2 -> println("Бумага")
+        }
+    if (human == machine) {
+        println("Ничья.")
+    } else if (human == 0 && machine == 1 || 
+            human == 1 && machine == 2 || 
+            human == 2 && machine == 0 
+              )
+    {
+        println("Живи пока.")
+    } else {
+        println("Ага! Проиграл кожаный!")
+    }
+}
