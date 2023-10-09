@@ -32,9 +32,9 @@ fun main(args: Array<String>) {
         }
     if (human == machine) {
         println("Ничья.")
-    } else if (human == 0 && machine == 1 || 
-            human == 1 && machine == 2 || 
-            human == 2 && machine == 0 
+    } else if (human == 0 && machine == 1 
+        || human == 1 && machine == 2 
+        || human == 2 && machine == 0 
               )
     {
         println("Живи пока.")
